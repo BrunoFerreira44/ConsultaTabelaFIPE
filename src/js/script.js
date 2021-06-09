@@ -5,6 +5,10 @@ const dropBrand = document.querySelector("select[name='brand']");
 const dropModel = document.querySelector("select[name='model']");
 const dropYear = document.querySelector("select[name='year']");
 
+////////////////////////////////////////////////////////////////////////////////////////////////
+//// Resetores dos comboboxes
+////////////////////////////////////////////////////////////////////////////////////////////////
+
 function kindResetor() {
    dropBrand.selectedIndex = 0;
    dropModel.selectedIndex = 0;
@@ -44,14 +48,13 @@ function modelResetor() {
    }
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////
+//// Eventos de seleção nos comboboxes
+////////////////////////////////////////////////////////////////////////////////////////////////
+
 dropKind.addEventListener("change", () => {
-   if (dropKind.selectedIndex === 1) {
-      getBrand("carros");
-   } else if (dropKind.selectedIndex === 2) {
-      getBrand("motos");
-   } else if (dropKind.selectedIndex === 3) {
-      getBrand("caminhoes");
-   }
+   let brandType = brandType[brandType.selectedIndex].value;
+   getBrand(brandType);
 });
 
 dropBrand.addEventListener("change", () => {
@@ -66,6 +69,10 @@ dropModel.addEventListener("change", () => {
    let modelId = dropModel[dropModel.selectedIndex].value;
    getYear(brandType, brandId, modelId);
 });
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+//// Funções Assíncronas que consultam a API
+////////////////////////////////////////////////////////////////////////////////////////////////
 
 async function getBrand(brandType) {
    try {
@@ -118,3 +125,5 @@ async function getYear(brandType, brandId, modelId) {
       console.error(error);
    }
 }
+
+//https://parallelum.com.br/fipe/api/v1/motos/marcas/145/modelos/5753/anos/2012-1
