@@ -18,15 +18,16 @@ body {
    width: 40vw;
    text-align: center;
    border-radius: 1rem;
-   box-shadow: 5px 5px 1px #00000022;
+   box-shadow: 10px 10px 1px #00000022;
    padding: 20px;
+   border: 1px solid #00000066;
 }
 
-h1 {
+#container h1 {
    letter-spacing: 0.2px;
 }
 
-p {
+#container p {
    margin-top: 30px;
    margin-bottom: 40px;
    line-height: 1.5rem;
@@ -73,10 +74,15 @@ select {
 
 #pesquisar {
    margin: 20px 0;
-   background-color: #00aa00c5;
-   color: #ffffff;
    border-radius: 4px;
-   border: solid 0.002rem #69696911;
+
+   /* background-color: #00aa00cc;
+   color: #ffffff;
+   border: solid 1px #00aa00; */
+
+   background-color: #f6f6f6;
+   color: #000;
+   border: solid 1px #000;
 
    width: 70%;
    height: 2.5rem;
@@ -92,4 +98,101 @@ select {
 #pesquisar:hover {
    background-color: #00aa00;
    color: white;
+   border: 1px solid #006600;
+   transition: 0.3s;
+}
+
+.popup-screen.popup-mostrar {
+   display: flex;
+}
+
+.popup-screen {
+   position: fixed;
+   width: 100vw;
+   height: 100vh;
+   top: 0;
+   left: 0;
+   background-color: #000000aa;
+   display: none;
+   justify-content: center;
+   align-items: center;
+   z-index: 2000;
+}
+
+.popup-container {
+   background-color: white;
+   width: 44%;
+   min-width: 400px;
+   padding: 20px 50px;
+
+   border-radius: 10px;
+
+   border: 1px solid #000000dd;
+   box-shadow: 0 0 800px 1px #ffffff11;
+
+   position: relative;
+}
+
+.btn-fechar-popup {
+   position: absolute;
+   top: -50px;
+   right: 0px;
+
+   cursor: pointer;
+   width: 40px;
+   height: 40px;
+   border-radius: 100%;
+
+   font-family: "Poppins", Arial, Helvetica, sans-serif;
+   font-weight: 600;
+}
+
+.btn-fechar-popup:hover {
+   background-color: #ff0000bb;
+   border: 1px solid #fff;
+   color: white;
+   transition: 0.25s;
+}
+
+.popup-container footer {
+   display: flex;
+   align-items: flex-end;
+   justify-content: space-between;
+}
+
+.popup-container main {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   margin-top: 20px;
+   margin-bottom: 20px;
+}
+
+.popup-container p,
+.popup-label {
+   margin: 0px;
+   padding: 0px;
+}
+
+.popup-label {
+   color: #696969;
+}
+
+div .atualizacao {
+   text-align: end;
+}
+
+@keyframes popup {
+   from {
+      opacity: 0;
+      transform: translate3d(0, -100px, 0);
+   }
+   to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+   }
+}
+
+.popup-mostrar .popup-container {
+   animation: popup 0.8s;
 }

@@ -18,7 +18,7 @@
    </head>
    <body>
       <div id="container">
-         <h1>Consulta da tabela FIPE</h1>
+         <h1>Consulta na tabela FIPE</h1>
          <p>
             Preencha os campos a seguir para verificar o preço médio do veículo
             desejado!
@@ -63,13 +63,58 @@
                <label for="year">
                   Selecione o ano de fabricação do veículo
                </label>
-               <select name="year" id="year" required>
+               <select
+                  name="year"
+                  id="year"
+                  onchange="refreshParameters()"
+                  required
+               >
                   <option value="blank">-</option>
                </select>
             </div>
          </form>
 
          <button id="pesquisar">Verificar</button>
+      </div>
+
+      <div id="popup-screen" class="popup-screen">
+         <div id="popup-container" class="popup-container">
+            <button id="btn-fechar-popup" class="btn-fechar-popup">X</button>
+
+            <header>
+               <h2 id="popup-model">COBALT LTZ 1.8 8V Econo.Flex 4p Mec.</h2>
+               <h3 id="popup-brand">GM - Chevrolet</h3>
+            </header>
+
+            <main>
+               <div>
+                  <label for="combustivel" class="popup-label">
+                     Combustível
+                  </label>
+                  <p id="popup-combustivel">Gasolina</p>
+               </div>
+
+               <div>
+                  <label for="ano" class="popup-label">Ano</label>
+                  <p id="popup-ano">2014</p>
+               </div>
+
+               <div class="atualizacao">
+                  <label for="atualizacao" class="popup-label">
+                     Última atualização
+                  </label>
+                  <p id="popup-atualizacao">junho de 2021</p>
+               </div>
+            </main>
+
+            <footer>
+               <div id="fipe-footer">
+                  <label for="cod-fipe" class="popup-label">Cód. FIPE</label>
+                  <p id="popup-cod-fipe">004420-2</p>
+               </div>
+               <h1 id="popup-valor">R$ 37.373,00</h1>
+            </footer>
+         </div>
       </div>
    </body>
 </html>

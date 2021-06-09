@@ -5,6 +5,32 @@ const dropBrand = document.querySelector("select[name='brand']");
 const dropModel = document.querySelector("select[name='model']");
 const dropYear = document.querySelector("select[name='year']");
 
+const popupModel = document.getElementById("popup-model");
+const popupBrand = document.getElementById("popup-brand");
+const popupCombustivel = document.getElementById("popup-combustivel");
+const popupAno = document.getElementById("popup-ano");
+const popupAtualizacao = document.getElementById("popup-atualizacao");
+const popupCodFipe = document.getElementById("popup-cod-fipe");
+const popupValor = document.getElementById("popup-valor");
+
+const btnVerificar = document.querySelector("#pesquisar");
+
+const popup = document.getElementById("popup-screen");
+
+let parameters = {
+   vehicleType: "",
+   brandId: "",
+   modelId: "",
+   year: "",
+};
+
+function refreshParameters() {
+   parameters.vehicleType = dropKind[dropKind.selectedIndex].value;
+   parameters.brandId = dropBrand[dropBrand.selectedIndex].value;
+   parameters.modelId = dropModel[dropModel.selectedIndex].value;
+   parameters.year = dropYear[dropYear.selectedIndex].value;
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////
 //// Resetores dos comboboxes
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -53,30 +79,30 @@ function modelResetor() {
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 dropKind.addEventListener("change", () => {
-   let brandType = brandType[brandType.selectedIndex].value;
-   getBrand(brandType);
+   let vehicleType = dropKind[dropKind.selectedIndex].value;
+   if (vehicleType !== "blank") getBrand(vehicleType);
 });
 
 dropBrand.addEventListener("change", () => {
-   let brandType = dropKind[dropKind.selectedIndex].value;
+   let vehicleType = dropKind[dropKind.selectedIndex].value;
    let brandId = dropBrand[dropBrand.selectedIndex].value;
-   getModel(brandType, brandId);
+   if (brandId !== "blank") getModel(vehicleType, brandId);
 });
 
 dropModel.addEventListener("change", () => {
-   let brandType = dropKind[dropKind.selectedIndex].value;
+   let vehicleType = dropKind[dropKind.selectedIndex].value;
    let brandId = dropBrand[dropBrand.selectedIndex].value;
    let modelId = dropModel[dropModel.selectedIndex].value;
-   getYear(brandType, brandId, modelId);
+   if (modelId !== "blank") getYear(vehicleType, brandId, modelId);
 });
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 //// Funções Assíncronas que consultam a API
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-async function getBrand(brandType) {
+async function getBrand(vehicleType) {
    try {
-      const dados = await fetch(apiURL + `/${brandType}/marcas`);
+      const dados = await fetch(apiURL + `/${vehicleType}/marcas`);
       let data = await dados.json();
 
       for (let i of data) {
@@ -90,10 +116,10 @@ async function getBrand(brandType) {
    }
 }
 
-async function getModel(brandType, brandId) {
+async function getModel(vehicleType, brandId) {
    try {
       const dados = await fetch(
-         apiURL + `/${brandType}/marcas/${brandId}/modelos`
+         apiURL + `/${vehicleType}/marcas/${brandId}/modelos`
       );
       let data = await dados.json();
 
@@ -108,10 +134,10 @@ async function getModel(brandType, brandId) {
    }
 }
 
-async function getYear(brandType, brandId, modelId) {
+async function getYear(vehicleType, brandId, modelId) {
    try {
       const dados = await fetch(
-         apiURL + `/${brandType}/marcas/${brandId}/modelos/${modelId}/anos`
+         apiURL + `/${vehicleType}/marcas/${brandId}/modelos/${modelId}/anos`
       );
       let data = await dados.json();
 
@@ -126,4 +152,53 @@ async function getYear(brandType, brandId, modelId) {
    }
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////
+//// Ações do botão verificar e do Pop-up
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+btnVerificar.addEventListener("click", () => {
+   refreshParameters();
+   if (
+      parameters.vehicleType !== "blank" &&
+      parameters.brandId !== "blank" &&
+      parameters.modelId !== "blank" &&
+      parameters.year !== "blank"
+   ) {
+      vehicleDataApi(parameters);
+   } else {
+      window.alert("Preencha todos os campos");
+   }
+});
+
+async function vehicleDataApi(params) {
+   try {
+      const dados = await fetch(
+         apiURL +
+            `/${params.vehicleType}/marcas/${params.brandId}/modelos/${params.modelId}/anos/${params.year}`
+      );
+      let data = await dados.json();
+
+      console.log(data);
+
+      popupModel.innerText = data.Modelo;
+      popupBrand.innerText = data.Marca;
+      popupCombustivel.innerText = await data.Combustivel;
+      popupAno.innerText = await data.AnoModelo;
+      popupAtualizacao.innerText = await data.MesReferencia;
+      popupCodFipe.innerText = await data.CodigoFipe;
+      popupValor.innerText = await data.Valor;
+
+      popup.classList.add("popup-mostrar");
+   } catch (error) {
+      console.error(error);
+   }
+}
+
+document.addEventListener("click", (e) => {
+   if (e.target.id === "popup-screen" || e.target.id === "btn-fechar-popup") {
+      popup.classList.remove("popup-mostrar");
+   }
+});
+
 //https://parallelum.com.br/fipe/api/v1/motos/marcas/145/modelos/5753/anos/2012-1
+//http://deividfortuna.github.io/fipe/
