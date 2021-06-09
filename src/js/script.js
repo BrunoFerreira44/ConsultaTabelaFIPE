@@ -166,7 +166,13 @@ btnVerificar.addEventListener("click", () => {
    ) {
       vehicleDataApi(parameters);
    } else {
-      window.alert("Preencha todos os campos");
+      Swal.fire({
+         icon: "error",
+         title: "Opa..",
+         text: "Preencha todos os campos!",
+         showConfirmButton: false,
+         timer: 2000,
+      });
    }
 });
 
