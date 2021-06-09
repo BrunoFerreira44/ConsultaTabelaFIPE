@@ -1,0 +1,95 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   border: none;
+   font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
+body {
+   display: flex;
+   justify-content: center;
+   background-color: #d6d6d6;
+}
+
+#container {
+   margin: 40px 0;
+   background-color: #f6f6f6;
+   width: 40vw;
+   text-align: center;
+   border-radius: 1rem;
+   box-shadow: 5px 5px 1px #00000022;
+   padding: 20px;
+}
+
+h1 {
+   letter-spacing: 0.2px;
+}
+
+p {
+   margin-top: 30px;
+   margin-bottom: 40px;
+   line-height: 1.5rem;
+   letter-spacing: 0.2px;
+}
+
+form {
+   margin: 0 auto;
+   width: 100%;
+   text-align: left;
+}
+
+.option-lists {
+   margin: 30px;
+}
+
+label,
+select {
+   display: block;
+}
+
+select {
+   margin-top: 10px;
+   padding-left: 10px;
+
+   height: 40px;
+   width: 100%;
+
+   outline: none;
+
+   font-style: italic;
+   font-size: 0.9rem;
+   color: #565656;
+   font-weight: 600;
+   letter-spacing: 0.3px;
+
+   border-radius: 4px;
+   border: solid 1px #a6a6a6;
+   border: none;
+   border-bottom: solid 2.5px #a6a6a6;
+
+   box-shadow: 0px 0px 5px #00000033;
+}
+
+#pesquisar {
+   margin: 20px 0;
+   background-color: #00aa00c5;
+   color: #ffffff;
+   border-radius: 4px;
+   border: solid 0.002rem #69696911;
+
+   width: 70%;
+   height: 2.5rem;
+
+   font-weight: 600;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+   line-height: 2.5rem;
+
+   cursor: pointer;
+}
+
+#pesquisar:hover {
+   background-color: #00aa00;
+   color: white;
+}

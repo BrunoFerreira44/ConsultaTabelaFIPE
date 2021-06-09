@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Pesquisa Tabela FIPE</title>
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap"
+         rel="stylesheet"
+      />
+      <link rel="stylesheet" href="./css/style.css" />
+      <script src="./js/script.js" defer></script>
+      <script src="./js/carros.js" defer></script>
+      <script src="./js/motos.js" defer></script>
+      <script src="./js/caminhoes.js" defer></script>
+   </head>
+   <body>
+      <div id="container">
+         <h1>Consulta da tabela FIPE</h1>
+         <p>
+            Preencha os campos a seguir para verificar o preço médio do veículo
+            desejado!
+         </p>
+         <form>
+            <div class="option-lists">
+               <label for="kind">Selecione o tipo do veículo</label>
+               <select name="kind" id="kind" onchange="kindResetor()" required>
+                  <option value="blank">-</option>
+                  <option value="carros">Carro</option>
+                  <option value="motos">Moto</option>
+                  <option value="caminhoes">Caminhão</option>
+               </select>
+            </div>
+
+            <div class="option-lists">
+               <label for="brand">Selecione a marca do veículo</label>
+               <select
+                  name="brand"
+                  id="brand"
+                  onchange="brandResetor()"
+                  required
+               >
+                  <option value="blank">-</option>
+               </select>
+            </div>
+
+            <div class="option-lists">
+               <label for="model">Selecione o modelo do veículo</label>
+               <select
+                  name="model"
+                  id="model"
+                  required
+                  onchange="modelResetor()"
+               >
+                  <option value="blank">-</option>
+               </select>
+            </div>
+
+            <div class="option-lists">
+               <label for="year">
+                  Selecione o ano de fabricação do veículo
+               </label>
+               <select name="year" id="year" required>
+                  <option value="blank">-</option>
+               </select>
+            </div>
+         </form>
+
+         <button id="pesquisar">Verificar</button>
+      </div>
+   </body>
+</html>
