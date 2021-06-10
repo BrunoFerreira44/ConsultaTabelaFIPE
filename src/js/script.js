@@ -171,7 +171,7 @@ btnVerificar.addEventListener("click", () => {
          title: "Opa..",
          text: "Preencha todos os campos!",
          showConfirmButton: false,
-         timer: 2000,
+         timer: 1500,
       });
    }
 });
