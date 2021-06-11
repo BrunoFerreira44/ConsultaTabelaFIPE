@@ -13,10 +13,11 @@ body {
 }
 
 #container {
-   min-width: 380px;
+   width: 40vw;
+   min-width: 350px;
+
    margin: 40px 0;
    background-color: #f6f6f6;
-   width: 40vw;
    text-align: center;
    border-radius: 1rem;
    box-shadow: 10px 10px 1px #00000022;
@@ -100,6 +101,7 @@ select {
    background-color: #00aa00;
    color: white;
    border: 1px solid #006600;
+
    transition: 0.3s;
 }
 
@@ -121,8 +123,10 @@ select {
 }
 
 .popup-container {
-   background-color: white;
    width: 44%;
+   min-width: 380px;
+
+   background-color: white;
    min-width: 400px;
    padding: 20px 50px;
 
@@ -146,12 +150,16 @@ select {
 
    font-family: "Poppins", Arial, Helvetica, sans-serif;
    font-weight: 600;
-}
 
-.btn-fechar-popup:hover {
    background-color: #ff0000bb;
    border: 1px solid #fff;
    color: white;
+}
+
+.btn-fechar-popup:hover {
+   background-color: #ffffff;
+   border: 1px solid #000;
+   color: black;
    transition: 0.25s;
 }
 
