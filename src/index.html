@@ -15,7 +15,12 @@
       <link rel="stylesheet" href="./css/style.css" />
       <script src="./js/script.js" defer></script>
       <script src="./lib/sweetalert2@11.js" defer></script>
+      <script
+         src="https://kit.fontawesome.com/39af08bb81.js"
+         crossorigin="anonymous"
+      ></script>
    </head>
+
    <body>
       <div id="container">
          <h1>Consulta na tabela FIPE</h1>
@@ -77,13 +82,31 @@
          <button id="pesquisar">Verificar</button>
       </div>
 
+      <footer id="footer-mainpage">
+         <div class="footer-social-media">
+            <a
+               href="https://www.linkedin.com/in/brunoferreira3003/"
+               target="_blank"
+            >
+               <i class="fab fa-linkedin icons" id="icon-linkedin"></i>
+            </a>
+            <a href="https://github.com/brunoferreira44" target="_blank">
+               <i class="fab fa-github-square icons" id="icon-github"></i>
+            </a>
+         </div>
+         <p class="footer-p">
+            Desenvolvido por:
+            <strong>Bruno Ferreira</strong>
+         </p>
+      </footer>
+
       <div id="popup-screen" class="popup-screen">
          <div id="popup-container" class="popup-container">
             <button id="btn-fechar-popup" class="btn-fechar-popup">X</button>
 
             <header>
-               <h2 id="popup-model">COBALT LTZ 1.8 8V Econo.Flex 4p Mec.</h2>
-               <h3 id="popup-brand">GM - Chevrolet</h3>
+               <h2 id="popup-model"></h2>
+               <h3 id="popup-brand"></h3>
             </header>
 
             <main>
@@ -91,28 +114,28 @@
                   <label for="combustivel" class="popup-label">
                      Combustível
                   </label>
-                  <p id="popup-combustivel">Gasolina</p>
+                  <p id="popup-combustivel"></p>
                </div>
 
                <div>
                   <label for="ano" class="popup-label">Ano</label>
-                  <p id="popup-ano">2014</p>
+                  <p id="popup-ano"></p>
                </div>
 
                <div class="atualizacao">
                   <label for="atualizacao" class="popup-label">
                      Última atualização
                   </label>
-                  <p id="popup-atualizacao">junho de 2021</p>
+                  <p id="popup-atualizacao"></p>
                </div>
             </main>
 
             <footer>
                <div id="fipe-footer">
                   <label for="cod-fipe" class="popup-label">Cód. FIPE</label>
-                  <p id="popup-cod-fipe">004420-2</p>
+                  <p id="popup-cod-fipe"></p>
                </div>
-               <h1 id="popup-valor">R$ 37.373,00</h1>
+               <h1 id="popup-valor"></h1>
             </footer>
          </div>
       </div>
