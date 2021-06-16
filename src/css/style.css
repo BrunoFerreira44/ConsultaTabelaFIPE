@@ -6,21 +6,27 @@
    font-family: "Poppins", Arial, Helvetica, sans-serif;
 }
 
+html {
+   font-size: 62.5%;
+}
+
 body {
    background-color: #d6d6d6;
+   font-size: 1.6rem;
 }
 
 #container {
    display: block;
 
-   width: 40vw;
-   min-width: 350px;
+   width: 90%;
+   max-width: 600px;
+   min-width: 300px;
 
    margin: 80px auto 80px auto;
 
    background-color: #f6f6f6;
    text-align: center;
-   border-radius: 1rem;
+   border-radius: 10px;
    box-shadow: 10px 10px 1px #00000022;
    padding: 20px;
    border: 1px solid #00000066;
@@ -33,7 +39,7 @@ body {
 #container p {
    margin-top: 30px;
    margin-bottom: 40px;
-   line-height: 1.5rem;
+   line-height: 32px;
    letter-spacing: 0.2px;
 }
 
@@ -62,7 +68,7 @@ select {
    outline: none;
 
    font-style: italic;
-   font-size: 0.9rem;
+   font-size: 16px;
    color: #565656;
    font-weight: 600;
    letter-spacing: 0.3px;
@@ -88,12 +94,11 @@ select {
    border: solid 1px #000;
 
    width: 70%;
-   height: 2.5rem;
+   height: 45px;
 
    font-weight: 600;
    letter-spacing: 1px;
    text-transform: uppercase;
-   line-height: 2.5rem;
 
    cursor: pointer;
 }
@@ -124,11 +129,11 @@ select {
 }
 
 .popup-container {
-   width: 44%;
-   min-width: 380px;
+   width: 80%;
+   max-width: 700px;
+   min-width: 310px;
 
    background-color: white;
-   min-width: 400px;
    padding: 20px 50px;
 
    border-radius: 10px;
@@ -137,6 +142,25 @@ select {
    box-shadow: 0 0 800px 1px #ffffff11;
 
    position: relative;
+}
+
+@media (max-width: 500px) {
+   html {
+      font-size: 50%;
+   }
+
+   #container h1 {
+      font-size: 3.6rem;
+   }
+
+   #container p,
+   #container label {
+      font-size: 1.9rem;
+   }
+
+   .popup-container {
+      padding: 20px;
+   }
 }
 
 .btn-fechar-popup {
@@ -155,6 +179,21 @@ select {
    background-color: #ff0000bb;
    border: 1px solid #fff;
    color: white;
+}
+
+#popup-model {
+   font-size: 2.4rem;
+   font-weight: bold;
+}
+
+#popup-brand {
+   font-size: 1.8rem;
+   font-weight: bold;
+}
+
+#popup-valor {
+   font-size: 3rem;
+   font-weight: bold;
 }
 
 .btn-fechar-popup:hover {
@@ -184,8 +223,12 @@ select {
    padding: 0px;
 }
 
+.popup-container p {
+   font-size: 1.7rem;
+}
 .popup-label {
-   color: #696969;
+   color: #595959;
+   font-style: italic;
 }
 
 div .atualizacao {
