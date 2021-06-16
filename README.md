@@ -2,11 +2,8 @@
 
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/BrunoFerreira44/WhatsappMessageSender/main/LICENSE)
 
-<h1>
-<img width="49%" height="50%" src="src/img/Fipe-ss1.png" />
-<img width="49%" height="50%" src="src/img/Fipe-ss2.png" />
-<img width="49%" height="50%" src="src/img/Fipe-ss3.png" />
-<img width="49%" height="50%" src="src/img/FIpe-ss5.png" />
+<h1 align="center">
+<img src="src/img/project.gif" />
 </h1>
 
 <h3 align="center">Acesse o Site: <a href="https://tabelafipe.vercel.app">tabelafipe.vercel.app</a></h3>
