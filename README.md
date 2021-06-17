@@ -6,7 +6,7 @@
 <img src="src/img/project.gif" />
 </h1>
 
-<h3 align="center">Acesse o Site: <a href="https://tabelafipe.vercel.app">tabelafipe.vercel.app</a></h3>
+<h3 align="center">Acesse o Site: <a href="https://tabelafipe.vercel.app" target="_blank">tabelafipe.vercel.app</a></h3>
 
 ---
   
