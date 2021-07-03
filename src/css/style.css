@@ -101,14 +101,14 @@ select {
    text-transform: uppercase;
 
    cursor: pointer;
+   
+   transition: background-color 0.3s;
 }
 
 #pesquisar:hover {
    background-color: #00aa00;
    color: white;
    border: 1px solid #006600;
-
-   transition: 0.3s;
 }
 
 .popup-screen.popup-mostrar {
@@ -179,6 +179,8 @@ select {
    background-color: #ff0000bb;
    border: 1px solid #fff;
    color: white;
+   
+   transition: background-color 0.25s;
 }
 
 #popup-model {
@@ -200,7 +202,6 @@ select {
    background-color: #ffffff;
    border: 1px solid #000;
    color: black;
-   transition: 0.25s;
 }
 
 .popup-container footer {
